@@ -11,7 +11,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() == 1 {
-        println!("Please input your command, for example: 'bash a.sh'");
+        println!("Please input your command, for example: './start.sh'");
         return;
     }
 
@@ -24,9 +24,9 @@ fn main() {
             Ok(Some(_)) => {
                 // 已退出
                 println!(
-                    "\n\n=====================================================\n\
-                Target child process has exited, it will be restart.\n\
-                =====================================================\n\n"
+                    "\n\n===================================================================\n\
+                minter-daemon: Target child process has exited, it will be restart.\n\
+                ===================================================================\n\n"
                 );
                 child = exec_command(&cmd);
             }
